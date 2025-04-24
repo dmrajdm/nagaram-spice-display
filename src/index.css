@@ -8,14 +8,50 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* White */
-    --foreground: 240 10% 3.9%; /* Dark Gray */
-    --card: 0 0% 100%; /* White */
-    --card-foreground: 240 10% 3.9%; /* Dark Gray */
-    --primary: 240 5.9% 10%; /* Dark Gray */
-    --primary-foreground: 0 0% 98%; /* White */
-    --secondary: 240 4.8% 95.9%; /* Light Gray */
-    --secondary-foreground: 240 5.9% 10%; /* Dark Gray */
+    --background: 36 33% 97%;
+    --foreground: 20 14% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 16%;
+
+    --primary: 15 70% 50%;
+    --primary-foreground: 36 33% 97%;
+
+    --secondary: 36 33% 90%;
+    --secondary-foreground: 20 14% 16%;
+
+    --muted: 36 33% 90%;
+    --muted-foreground: 20 8% 40%;
+
+    --accent: 30 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 36 33% 90%;
+    --input: 36 33% 90%;
+    --ring: 15 70% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
   }
 
   body {
@@ -27,4 +63,23 @@
   }
 }
 
-/* Remove the previous Chettinad-inspired border pattern */
+/* Custom styles */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
