@@ -15,7 +15,7 @@ const AboutSection: React.FC = () => {
             />
             <div className="grid grid-cols-3 gap-2 mt-2">
               <img src="/images/chettinadu_archjpg.jpg" alt="Chettinad architecture" className="rounded-md h-24 object-cover" />
-              <img src="images/chettinadu_cusine.jpg" alt="Traditional patterns" className="rounded-md h-24 object-cover" />
+              <img src="/images/chettinadu_cusine.jpg" alt="Traditional patterns" className="rounded-md h-24 object-cover" />
               <img src="/images/spice_market.jpg" alt="Chettinad cuisine" className="rounded-md h-24 object-cover" />
             </div>
           </div>
