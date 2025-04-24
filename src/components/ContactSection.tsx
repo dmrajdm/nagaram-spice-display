@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -63,33 +62,33 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-16 bg-gradient-to-b from-spice-beige/30 to-white relative">
+    <section id="contact" className="py-16 bg-white relative">
       <div className="container max-w-6xl mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 font-playfair text-spice-brown">Order Our Spices</h2>
+          <h2 className="text-3xl font-bold mb-4 font-playfair text-gray-900">Order Our Spices</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Place your order directly through WhatsApp for a quick and personalized experience.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-bold mb-4 font-playfair text-spice-brown">Contact Us</h3>
+          <div className="bg-gray-50 p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-4 font-playfair text-gray-900">Contact Us</h3>
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className="bg-spice-red text-white p-2 rounded-full">
+                <div className="bg-gray-900 text-white p-2 rounded-full">
                   <MessageSquare size={20} />
                 </div>
                 <div>
                   <h4 className="font-medium">WhatsApp</h4>
-                  <a href={`https://wa.me/${whatsappNumber}`} className="text-spice-red hover:underline">
+                  <a href={`https://wa.me/${whatsappNumber}`} className="text-gray-900 hover:underline">
                     {whatsappNumber.replace(/(\d{2})(\d{5})(\d{5})/, '+$1 $2 $3')}
                   </a>
                 </div>
               </div>
               
               <div className="flex items-center gap-3">
-                <div className="bg-spice-red text-white p-2 rounded-full">
+                <div className="bg-gray-900 text-white p-2 rounded-full">
                   <Phone size={20} />
                 </div>
                 <div>
@@ -98,17 +97,16 @@ const ContactSection: React.FC = () => {
                 </div>
               </div>
               
-              <div className="p-4 bg-spice-beige/20 rounded-lg mt-6">
+              <div className="p-4 bg-gray-100 rounded-lg mt-6">
                 <p className="text-muted-foreground italic text-sm">
-                  "Experience the traditional hospitality of Nagarathar as we welcome your inquiries and orders.
-                  We'll respond promptly with payment information and delivery details."
+                  "Experience the traditional hospitality of Nagarathar as we welcome your inquiries and orders."
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-bold mb-4 font-playfair text-spice-brown">Place Your Order</h3>
+          <div className="bg-gray-50 p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-4 font-playfair text-gray-900">Place Your Order</h3>
             <form onSubmit={sendToWhatsApp}>
               <div className="grid grid-cols-1 gap-4">
                 <div>
@@ -118,7 +116,7 @@ const ContactSection: React.FC = () => {
                     id="name"
                     value={orderName}
                     onChange={(e) => setOrderName(e.target.value)}
-                    className="w-full p-3 border border-border rounded-md focus:ring-2 focus:ring-spice-red/30 focus:border-spice-red outline-none transition"
+                    className="w-full p-3 border border-gray-200 rounded-md focus:ring-2 focus:ring-gray-900/30 focus:border-gray-900 outline-none transition"
                     placeholder="Enter your name"
                   />
                 </div>
@@ -129,7 +127,7 @@ const ContactSection: React.FC = () => {
                     id="phone"
                     value={orderPhone}
                     onChange={(e) => setOrderPhone(e.target.value)}
-                    className="w-full p-3 border border-border rounded-md focus:ring-2 focus:ring-spice-red/30 focus:border-spice-red outline-none transition"
+                    className="w-full p-3 border border-gray-200 rounded-md focus:ring-2 focus:ring-gray-900/30 focus:border-gray-900 outline-none transition"
                     placeholder="Enter your phone number"
                   />
                 </div>
@@ -140,14 +138,14 @@ const ContactSection: React.FC = () => {
                     rows={4}
                     value={orderMessage}
                     onChange={(e) => setOrderMessage(e.target.value)}
-                    className="w-full p-3 border border-border rounded-md focus:ring-2 focus:ring-spice-red/30 focus:border-spice-red outline-none transition"
+                    className="w-full p-3 border border-gray-200 rounded-md focus:ring-2 focus:ring-gray-900/30 focus:border-gray-900 outline-none transition"
                     placeholder="List the products you want to order and quantities"
                   ></textarea>
                 </div>
                 <Button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-spice-red hover:bg-spice-red/90 text-white font-medium w-full flex items-center justify-center gap-2"
+                  className="bg-gray-900 hover:bg-gray-800 text-white font-medium w-full flex items-center justify-center gap-2"
                 >
                   <MessageSquare size={20} />
                   {isSubmitting ? "Sending..." : "Send Order via WhatsApp"}
