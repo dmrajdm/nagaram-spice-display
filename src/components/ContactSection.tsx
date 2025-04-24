@@ -11,7 +11,7 @@ const ContactSection: React.FC = () => {
   const [orderMessage, setOrderMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const whatsappNumber = "+919876543210"; // Replace with your actual WhatsApp number
+  const whatsappNumber = "+917339614739"; // Replace with your actual WhatsApp number
   
   const sendToWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
