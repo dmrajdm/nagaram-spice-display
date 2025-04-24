@@ -9,7 +9,7 @@ const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1518983835933-39b3110446cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" 
+              src="/images/chettinadu_archjpg.jpg"
               alt="Spice market" 
               className="rounded-lg shadow-xl w-full h-auto aspect-video object-cover"
             />
