@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           <div className="order-1 md:order-2">
             <div className="bg-white p-3 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
               <img 
-                src="https://images.unsplash.com/photo-1596040033229-a9821eec400d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                src= "/images/red-chili-powder.jpg"
                 alt="Colorful spices in wooden bowls" 
                 className="rounded-lg w-full h-auto aspect-square object-cover"
               />
