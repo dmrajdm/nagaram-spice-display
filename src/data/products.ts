@@ -46,11 +46,11 @@ export const products: Product[] = [
     featured: false
   },
   {
-    id: "chaat-masala",
+    id: "kulambu-masala",
     name: "Chaat Masala",
     description: "Tangy, zesty blend perfect for sprinkling on fruits, salads, and chaats.",
     price: 8.49,
-    imageUrl: "/images/chaat-masala.jpg",
+    imageUrl: "/images/kulambu-masala.jpg",
     category: "blends",
     featured: true
   },
@@ -60,15 +60,6 @@ export const products: Product[] = [
     description: "Aromatic blend crafted specifically for perfect biryanis and rice dishes.",
     price: 9.99,
     imageUrl: "/images/biryani-masala.jpg",
-    category: "blends",
-    featured: false
-  },
-  {
-    id: "tandoori-masala",
-    name: "Tandoori Masala",
-    description: "Smoky, bold blend perfect for marinades and grilled dishes.",
-    price: 8.99,
-    imageUrl: "/images/tandoori-masala.jpg",
     category: "blends",
     featured: false
   },
