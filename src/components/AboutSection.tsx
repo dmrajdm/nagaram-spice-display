@@ -14,9 +14,9 @@ const AboutSection: React.FC = () => {
               className="rounded-lg shadow-xl w-full h-auto aspect-video object-cover"
             />
             <div className="grid grid-cols-3 gap-2 mt-2">
-              <img src="https://images.unsplash.com/photo-1620553967899-9df69c8ef26a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Chettinad architecture" className="rounded-md h-24 object-cover" />
-              <img src="https://images.unsplash.com/photo-1505072276982-d6c55de5d5d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Traditional patterns" className="rounded-md h-24 object-cover" />
-              <img src="https://images.unsplash.com/photo-1516714819001-8ee7a13ee150?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Chettinad cuisine" className="rounded-md h-24 object-cover" />
+              <img src="/images/chettinadu_archjpg.jpg" alt="Chettinad architecture" className="rounded-md h-24 object-cover" />
+              <img src="images/chettinadu_cusine.jpg" alt="Traditional patterns" className="rounded-md h-24 object-cover" />
+              <img src="/images/spice_market.jpg" alt="Chettinad cuisine" className="rounded-md h-24 object-cover" />
             </div>
           </div>
           <div>
