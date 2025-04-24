@@ -1,55 +1,70 @@
 
 import React from 'react';
+import { Card, CardContent } from './ui/card';
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-16 md:py-24">
+    <section id="about" className="py-16 md:py-24 bg-spice-beige/30">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1518983835933-39b3110446cc?q=80&w=2070&auto=format&fit=crop" 
+              src="https://images.unsplash.com/photo-1518983835933-39b3110446cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" 
               alt="Spice market" 
               className="rounded-lg shadow-xl w-full h-auto aspect-video object-cover"
             />
+            <div className="grid grid-cols-3 gap-2 mt-2">
+              <img src="https://images.unsplash.com/photo-1620553967899-9df69c8ef26a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Chettinad architecture" className="rounded-md h-24 object-cover" />
+              <img src="https://images.unsplash.com/photo-1505072276982-d6c55de5d5d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Traditional patterns" className="rounded-md h-24 object-cover" />
+              <img src="https://images.unsplash.com/photo-1516714819001-8ee7a13ee150?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Chettinad cuisine" className="rounded-md h-24 object-cover" />
+            </div>
           </div>
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair">Our Story</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair text-spice-brown">The Nagarathar Heritage</h2>
             <p className="text-muted-foreground mb-6">
-              Nagaram Masala was born from a passion for authentic Indian flavors and a desire to bring 
-              the true essence of Indian spices to kitchens around the world. Our journey began generations 
-              ago in the spice markets of southern India.
+              Nagaram Masala draws inspiration from the rich Nagarathar Chettiar heritage of Tamil Nadu. 
+              For centuries, the Nagarathars were successful merchants who traveled across Southeast Asia,
+              bringing back exotic spices and culinary techniques to their homeland in Chettinad.
             </p>
             <p className="text-muted-foreground mb-6">
-              Today, we continue this tradition by carefully sourcing the finest spices and creating 
-              authentic blends using time-honored techniques. Each batch is crafted with attention to detail, 
-              ensuring a perfect balance of flavors.
+              Like the grand mansions (Nattukottai) of Chettinad, known for their intricate craftsmanship 
+              and attention to detail, our masalas are crafted with precision and care, preserving authentic 
+              flavors that have been cherished for generations.
             </p>
+            
             <div className="grid grid-cols-2 gap-6 mt-8">
-              <div>
-                <h3 className="text-xl font-bold text-spice-red mb-2 font-playfair">Quality</h3>
-                <p className="text-sm text-muted-foreground">
-                  We source only premium grade spices and test each batch for purity and potency.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-spice-red mb-2 font-playfair">Authenticity</h3>
-                <p className="text-sm text-muted-foreground">
-                  Our recipes maintain the traditional proportions for truly authentic flavor.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-spice-red mb-2 font-playfair">Freshness</h3>
-                <p className="text-sm text-muted-foreground">
-                  Small-batch production ensures maximum freshness and flavor intensity.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-spice-red mb-2 font-playfair">Sustainability</h3>
-                <p className="text-sm text-muted-foreground">
-                  We work directly with farmers to ensure fair compensation and sustainable practices.
-                </p>
-              </div>
+              <Card className="bg-white/80 border-spice-gold/30 hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <h3 className="text-xl font-bold text-spice-red mb-2 font-playfair">Heritage</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Our recipes follow the Chettinad tradition of balancing bold spices with subtle aromatic notes.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="bg-white/80 border-spice-gold/30 hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <h3 className="text-xl font-bold text-spice-red mb-2 font-playfair">Craftsmanship</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Like Athangudi tiles, our spices are handcrafted with traditional techniques.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="bg-white/80 border-spice-gold/30 hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <h3 className="text-xl font-bold text-spice-red mb-2 font-playfair">Authenticity</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Our masalas maintain the authentic proportions of the Nagarathar culinary tradition.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="bg-white/80 border-spice-gold/30 hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <h3 className="text-xl font-bold text-spice-red mb-2 font-playfair">Community</h3>
+                  <p className="text-sm text-muted-foreground">
+                    We support traditional spice farmers and artisans from the Chettinad region.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
