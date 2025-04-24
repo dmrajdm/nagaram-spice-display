@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { WhatsApp, Phone } from 'lucide-react';
+import { MessageSquare, Phone } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   const { toast } = useToast();
@@ -78,7 +78,7 @@ const ContactSection: React.FC = () => {
             <div className="space-y-6">
               <div className="flex items-center gap-3">
                 <div className="bg-spice-red text-white p-2 rounded-full">
-                  <WhatsApp size={20} />
+                  <MessageSquare size={20} />
                 </div>
                 <div>
                   <h4 className="font-medium">WhatsApp</h4>
@@ -149,7 +149,7 @@ const ContactSection: React.FC = () => {
                   disabled={isSubmitting}
                   className="bg-spice-red hover:bg-spice-red/90 text-white font-medium w-full flex items-center justify-center gap-2"
                 >
-                  <WhatsApp size={20} />
+                  <MessageSquare size={20} />
                   {isSubmitting ? "Sending..." : "Send Order via WhatsApp"}
                 </Button>
               </div>
