@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
+    <section className="relative w-full h-screen overflow-hidden">
       <Carousel className="w-full h-full" opts={{ loop: true }}>
         <CarouselContent>
           {heroImages.map((image, index) => (
