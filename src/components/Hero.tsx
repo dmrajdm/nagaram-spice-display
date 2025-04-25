@@ -21,8 +21,8 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
-      <Carousel className="w-full h-full" opts={{ loop: true }}>
+    <section className="relative w-full overflow-hidden">
+      <Carousel className="w-full h-[100vh]" opts={{ loop: true }}>
         <CarouselContent>
           {heroImages.map((image, index) => (
             <CarouselItem key={index} className="w-full h-full relative">
@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
               >
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
               </div>
-              <div className="relative w-full h-full flex flex-col items-center justify-center text-center px-4 space-y-4">
+              <div className="relative flex flex-col items-center justify-center text-center px-4 space-y-4">
                 <div className="max-w-3xl mx-auto">
                   <h1 className="text-2xl md:text-4xl font-bold mb-2 font-playfair text-white">
                     {image.title}
