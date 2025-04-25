@@ -1,7 +1,4 @@
-"use client"
-
 import { useEffect, useState } from "react"
-import Image from "next/image"
 
 const images = [
   { src: "/images/hero-image-1.webp", alt: "Slide 1" },
@@ -9,7 +6,7 @@ const images = [
   { src: "/images/hero-image-3.webp", alt: "Slide 3" },
 ]
 
-export default function ImageCarousel() {
+const Hero = () => {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
@@ -20,21 +17,17 @@ export default function ImageCarousel() {
   }, [])
 
   return (
-    <div className="relative w-full h-[50vh] overflow-hidden">
-      {images.map((image, i) => (
-        <div
+    <section className="relative w-full h-[50vh] overflow-hidden">
+      {images.map((img, i) => (
+        <img
           key={i}
-          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${i === index ? "opacity-100 z-10" : "opacity-0 z-0"}`}
-        >
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            className="object-cover"
-            priority={i === 0}
-          />
-        </div>
+          src={img.src}
+          alt={img.alt}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${i === index ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+        />
       ))}
-    </div>
+    </section>
   )
 }
+
+export default Hero
