@@ -1,61 +1,29 @@
-import React from "react";
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 
-const Hero: React.FC = () => {
-  const heroImages = [
-    {
-      url: "/images/spices-in-bowls-stockcake.jpg",
-      title: "Authentic Flavors",
-      subtitle: "From Chettinad",
-    },
-    {
-      url: "/images/red-chili-powder.jpg",
-      title: "Traditional Blends",
-      subtitle: "Modern Quality",
-    },
-    {
-      url: "/images/chettinadu_archjpg.jpg",
-      title: "Premium Spices",
-      subtitle: "Crafted with Heritage",
-    },
-  ];
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nagaram Masala | Premium Indian Spices</title>
+    <meta name="description" content="Discover authentic Indian spices and masala blends - Nagaram Masala brings traditional flavors to your kitchen." />
+    <meta name="author" content="Nagaram Masala" />
 
-  return (
-    <section className="relative w-full">
-      <Carousel className="w-full" opts={{ loop: true }}>
-        <CarouselContent>
-          {heroImages.map((image, index) => (
-            <CarouselItem key={index} className="relative h-[260px] md:h-[320px]">
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${image.url})` }}
-              >
-                <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
-              </div>
-              <div className="relative z-10 h-full flex flex-col justify-center items-center text-white text-center px-4">
-                <h1 className="text-xl md:text-3xl font-bold font-playfair">{image.title}</h1>
-                <p className="text-sm md:text-lg mt-1 mb-3">{image.subtitle}</p>
-                <div className="flex gap-4 flex-wrap justify-center">
-                  <a
-                    href="#products"
-                    className="bg-spice-red hover:bg-spice-red/90 px-4 py-2 rounded text-white text-sm"
-                  >
-                    Explore Our Spices
-                  </a>
-                  <a
-                    href="#contact"
-                    className="bg-spice-red hover:bg-spice-red/90 px-4 py-2 rounded text-white text-sm"
-                  >
-                    Order Now
-                  </a>
-                </div>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
-    </section>
-  );
-};
+    <meta property="og:title" content="Nagaram Masala | Premium Indian Spices" />
+    <meta property="og:description" content="Discover authentic Indian spices and masala blends - Nagaram Masala brings traditional flavors to your kitchen." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1596040033229-a9821eec400d?q=80&w=2070&auto=format&fit=crop" />
 
-export default Hero;
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@nagarammasala" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1596040033229-a9821eec400d?q=80&w=2070&auto=format&fit=crop" />
+    
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
