@@ -21,8 +21,8 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden w-full">
-      <Carousel className="w-full h-[70vh]" opts={{ loop: true }}>
+    <section className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden">
+      <Carousel className="w-full h-full" opts={{ loop: true }}>
         <CarouselContent>
           {heroImages.map((image, index) => (
             <CarouselItem key={index} className="w-full h-full relative">
@@ -30,13 +30,13 @@ const Hero: React.FC = () => {
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
                   backgroundImage: `url(${image.url})`,
-                  backgroundSize: 'cover', // Ensures the image fills the space properly
-                  backgroundPosition: 'center',
+                  backgroundSize: 'cover', // Ensure the image covers the space
+                  backgroundPosition: 'center', // Position it centered
                 }}
               >
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
               </div>
-              <div className="relative flex flex-col items-center justify-center text-center px-4 space-y-4">
+              <div className="relative h-full flex flex-col items-center justify-center text-center px-4 space-y-4">
                 <div className="max-w-3xl mx-auto">
                   <h1 className="text-2xl md:text-4xl font-bold mb-2 font-playfair text-white">
                     {image.title}
@@ -46,11 +46,11 @@ const Hero: React.FC = () => {
                   </p>
                   <div className="flex flex-wrap gap-4 justify-center">
                     <a href="#products"
-                      className="bg-spice-red hover:bg-spice-red/90 text-white px-6 py-2 rounded-md font-medium transition-colors w-full sm:w-auto">
+                      className="bg-spice-red hover:bg-spice-red/90 text-white px-6 py-2 rounded-md font-medium transition-colors">
                       Explore Our Spices
                     </a>
                     <a href="#contact"
-                      className="bg-spice-red hover:bg-spice-red/90 text-white px-6 py-2 rounded-md font-medium transition-colors w-full sm:w-auto">
+                      className="bg-spice-red hover:bg-spice-red/90 text-white px-6 py-2 rounded-md font-medium transition-colors">
                       Order Now
                     </a>
                   </div>
