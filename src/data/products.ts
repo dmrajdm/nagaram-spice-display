@@ -2,7 +2,7 @@ export interface Product {
   id: string;
   name: string;
   description: string;
-  price: number;
+  price: number; // Price in INR
   imageUrl: string;
   category: string;
   featured: boolean;
@@ -13,7 +13,7 @@ export const products: Product[] = [
     id: "garam-masala",
     name: "Garam Masala",
     description: "A warm blend of cumin, coriander, cardamom, and other spices perfect for curries and rice dishes.",
-    price: 7.99,
+    price: 599, // in INR
     imageUrl: "/images/garam-masala.jpg",
     category: "blends",
     featured: true
@@ -22,7 +22,7 @@ export const products: Product[] = [
     id: "turmeric-powder",
     name: "Turmeric Powder",
     description: "Vibrant yellow spice with earthy flavor and anti-inflammatory properties.",
-    price: 6.49,
+    price: 649,
     imageUrl: "/images/turmeric-powder.jpg",
     category: "singles",
     featured: true
@@ -31,7 +31,7 @@ export const products: Product[] = [
     id: "coriander-powder",
     name: "Coriander Powder",
     description: "Mild, sweet and aromatic ground coriander seeds essential for Indian cooking.",
-    price: 5.99,
+    price: 599,
     imageUrl: "/images/coriander-powder.jpg",
     category: "singles",
     featured: false
@@ -40,7 +40,7 @@ export const products: Product[] = [
     id: "cumin-powder",
     name: "Cumin Powder",
     description: "Earthy, nutty spice that adds warm flavor to many dishes.",
-    price: 6.29,
+    price: 629,
     imageUrl: "/images/cumin-powder.jpg",
     category: "singles",
     featured: false
@@ -49,7 +49,7 @@ export const products: Product[] = [
     id: "kulambu-masala",
     name: "Chaat Masala",
     description: "Tangy, zesty blend perfect for sprinkling on fruits, salads, and chaats.",
-    price: 8.49,
+    price: 849,
     imageUrl: "/images/kulambu-masala.jpg",
     category: "blends",
     featured: true
@@ -58,7 +58,7 @@ export const products: Product[] = [
     id: "biryani-masala",
     name: "Biryani Masala",
     description: "Aromatic blend crafted specifically for perfect biryanis and rice dishes.",
-    price: 9.99,
+    price: 999,
     imageUrl: "/images/biryani-masala.jpg",
     category: "blends",
     featured: false
@@ -67,10 +67,29 @@ export const products: Product[] = [
     id: "red-chili-powder",
     name: "Red Chili Powder",
     description: "Vibrant, hot chili powder for adding heat to any dish.",
-    price: 5.99,
+    price: 599,
     imageUrl: "/images/red-chili-powder.jpg",
     category: "singles",
     featured: true
   }
 ];
 
+// Cart types
+export interface CartItem {
+  productId: string;
+  quantity: number;
+  weight: '100g' | '500g' | '1kg';
+}
+
+export const calculateItemPrice = (basePrice: number, weight: '100g' | '500g' | '1kg'): number => {
+  switch (weight) {
+    case '100g':
+      return basePrice;
+    case '500g':
+      return basePrice * 4.5;
+    case '1kg':
+      return basePrice * 8;
+    default:
+      return basePrice;
+  }
+};
