@@ -4,17 +4,17 @@ import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 const Hero: React.FC = () => {
   const heroImages = [
     {
-      url: "/images/spices-in-bowls-stockcake.jpg", // Should be inside public/images/
+      url: "/images/spices-in-bowls-stockcake.jpg",
       title: "Authentic Flavors",
       subtitle: "From Chettinad"
     },
     {
-      url: "/images/red-chili-powder.jpg", // Should be inside public/images/
+      url: "/images/red-chili-powder.jpg",
       title: "Traditional Blends",
       subtitle: "Modern Quality"
     },
     {
-      url: "/images/chettinadu_archjpg.jpg", // Should be inside public/images/
+      url: "/images/chettinadu_archjpg.jpg",
       title: "Premium Spices",
       subtitle: "Crafted with Heritage"
     }
@@ -51,25 +51,15 @@ const Hero: React.FC = () => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <Carousel className="w-full h-full" opts={{ loop: true }}>
-        <CarouselContent className="h-full relative">
+        <CarouselContent>
           {heroImages.map((image, index) => (
-            <CarouselItem
-              key={index}
-              className={`w-full h-full absolute top-0 left-0 transition-opacity duration-700 ease-in-out ${index === current ? "opacity-100 z-10" : "opacity-0 z-0"}`}
-            >
+            <CarouselItem key={index} className="w-full h-full relative">
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                  backgroundImage: `url(${image.url})`
+                  backgroundImage: `url(${image.url})`, // Fixed backticks around the URL
                 }}
               >
-                {/* Debugging: Use a placeholder to ensure background image is working */}
-                <img
-                  src={image.url}
-                  alt={image.title}
-                  style={{ visibility: 'hidden' }}
-                  onError={(e) => e.target.style.display = 'none'} // Hides image if not found
-                />
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
               </div>
               <div className="relative h-full flex flex-col items-center justify-center text-center px-4 space-y-4">
