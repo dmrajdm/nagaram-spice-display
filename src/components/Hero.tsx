@@ -4,17 +4,17 @@ import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 const Hero: React.FC = () => {
   const heroImages = [
     {
-      url: "/images/spices-in-bowls-stockcake.jpg", // Vite will correctly handle this from the public folder
+      url: "/images/spices-in-bowls-stockcake.jpg", // Should be inside public/images/
       title: "Authentic Flavors",
       subtitle: "From Chettinad"
     },
     {
-      url: "/images/red-chili-powder.jpg",
+      url: "/images/red-chili-powder.jpg", // Should be inside public/images/
       title: "Traditional Blends",
       subtitle: "Modern Quality"
     },
     {
-      url: "/images/chettinadu_archjpg.jpg",
+      url: "/images/chettinadu_archjpg.jpg", // Should be inside public/images/
       title: "Premium Spices",
       subtitle: "Crafted with Heritage"
     }
@@ -59,8 +59,17 @@ const Hero: React.FC = () => {
             >
               <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${image.url})` }} // Vite will correctly handle static public assets
+                style={{
+                  backgroundImage: `url(${image.url})`
+                }}
               >
+                {/* Debugging: Use a placeholder to ensure background image is working */}
+                <img
+                  src={image.url}
+                  alt={image.title}
+                  style={{ visibility: 'hidden' }}
+                  onError={(e) => e.target.style.display = 'none'} // Hides image if not found
+                />
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
               </div>
               <div className="relative h-full flex flex-col items-center justify-center text-center px-4 space-y-4">
