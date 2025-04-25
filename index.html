@@ -21,18 +21,14 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full h-[35vh] md:h-[45vh] overflow-hidden">
+    <section className="relative w-full h-[250px] md:h-[320px] overflow-hidden">
       <Carousel className="w-full h-full" opts={{ loop: true }}>
-        <CarouselContent>
+        <CarouselContent className="h-full">
           {heroImages.map((image, index) => (
             <CarouselItem key={index} className="w-full h-full relative">
               <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage: `url(${image.url})`,
-                  backgroundSize: 'cover',  // Ensures the image fills the space without stretching
-                  backgroundPosition: 'center',  // Keeps the image centered
-                }}
+                style={{ backgroundImage: `url(${image.url})` }}
               >
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
               </div>
@@ -45,12 +41,16 @@ const Hero: React.FC = () => {
                     {image.subtitle}
                   </p>
                   <div className="flex flex-wrap gap-4 justify-center">
-                    <a href="#products"
-                      className="bg-spice-red hover:bg-spice-red/90 text-white px-6 py-2 rounded-md font-medium transition-colors">
+                    <a
+                      href="#products"
+                      className="bg-spice-red hover:bg-spice-red/90 text-white px-6 py-2 rounded-md font-medium transition-colors"
+                    >
                       Explore Our Spices
                     </a>
-                    <a href="#contact"
-                      className="bg-spice-red hover:bg-spice-red/90 text-white px-6 py-2 rounded-md font-medium transition-colors">
+                    <a
+                      href="#contact"
+                      className="bg-spice-red hover:bg-spice-red/90 text-white px-6 py-2 rounded-md font-medium transition-colors"
+                    >
                       Order Now
                     </a>
                   </div>
