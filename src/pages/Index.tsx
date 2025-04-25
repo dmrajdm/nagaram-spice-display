@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import ProductsSection from '../components/ProductsSection';
-import AboutSection from '../components/AboutSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
@@ -14,7 +13,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col pt-16">
+    <div className="min-h-screen flex flex-col pt-14">
       <Header />
       <main>
         <Hero />
