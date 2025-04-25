@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 
 const Hero: React.FC = () => {
@@ -20,36 +20,8 @@ const Hero: React.FC = () => {
     }
   ];
 
-  const [current, setCurrent] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (!isHovered) {
-      interval = setInterval(() => {
-        setCurrent((prev) => (prev + 1) % heroImages.length);
-      }, 2000);
-    }
-
-    const progressInterval = setInterval(() => {
-      if (!isHovered) {
-        setProgress((prev) => (prev + 1) % 100);
-      }
-    }, 20);
-
-    return () => {
-      clearInterval(interval);
-      clearInterval(progressInterval);
-    };
-  }, [isHovered]);
-
   return (
-    <section
-      className="relative h-[45vh] md:h-[55vh] overflow-hidden"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <section className="relative h-[45vh] md:h-[55vh] overflow-hidden">
       <Carousel className="w-full h-full" opts={{ loop: true }}>
         <CarouselContent>
           {heroImages.map((image, index) => (
@@ -86,14 +58,6 @@ const Hero: React.FC = () => {
           ))}
         </CarouselContent>
       </Carousel>
-
-      {/* Modern Progress Bar */}
-      <div className="absolute bottom-0 left-0 w-full bg-black/40 h-2">
-        <div
-          className="h-full bg-spice-red transition-all duration-200 ease-out"
-          style={{ width: `${progress}%` }}
-        />
-      </div>
     </section>
   );
 };
