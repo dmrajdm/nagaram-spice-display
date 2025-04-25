@@ -21,16 +21,35 @@ const Hero: React.FC = () => {
   ];
 
   const [current, setCurrent] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % heroImages.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
+    let interval: NodeJS.Timeout;
+    if (!isHovered) {
+      interval = setInterval(() => {
+        setCurrent((prev) => (prev + 1) % heroImages.length);
+      },4000);
+    }
+
+    const progressInterval = setInterval(() => {
+      if (!isHovered) {
+        setProgress((prev) => (prev + 1) % 100);
+      }
+    }, 20);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(progressInterval);
+    };
+  }, [isHovered]);
 
   return (
-    <section className="relative h-[45vh] md:h-[55vh] overflow-hidden">
+    <section
+      className="relative h-[45vh] md:h-[55vh] overflow-hidden"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <Carousel className="w-full h-full" opts={{ loop: true }}>
         <CarouselContent className="h-full relative">
           {heroImages.map((image, index) => (
@@ -58,7 +77,7 @@ const Hero: React.FC = () => {
                       Explore Our Spices
                     </a>
                     <a href="#contact"
-                      className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-6 py-2 rounded-md font-medium transition-colors">
+                      className="bg-spice-red hover:bg-spice-red/90 text-white px-6 py-2 rounded-md font-medium transition-colors">
                       Order Now
                     </a>
                   </div>
@@ -68,6 +87,14 @@ const Hero: React.FC = () => {
           ))}
         </CarouselContent>
       </Carousel>
+
+      {/* Progress Bar */}
+      <div className="absolute bottom-0 left-0 w-full bg-black/50 h-1">
+        <div
+          className="h-full bg-spice-red"
+          style={{ width: `${progress}%`, transition: "width 0.2s" }}
+        />
+      </div>
     </section>
   );
 };
