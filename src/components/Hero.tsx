@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative h-[25vh] md:h-[35vh] overflow-hidden">
+    <section className="relative h-[15vh] md:h-[25vh] overflow-hidden">
       <Carousel className="w-full h-full" opts={{ loop: true }}>
         <CarouselContent>
           {heroImages.map((image, index) => (
@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
                       Explore Our Spices
                     </a>
                     <a href="#contact"
-                      className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-6 py-2 rounded-md font-medium transition-colors">
+                      className="bg-spice-red hover:bg-spice-red/90 text-white px-6 py-2 rounded-md font-medium transition-colors">
                       Order Now
                     </a>
                   </div>
