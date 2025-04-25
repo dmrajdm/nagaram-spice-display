@@ -1,29 +1,67 @@
+import React from 'react';
+import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nagaram Masala | Premium Indian Spices</title>
-    <meta name="description" content="Discover authentic Indian spices and masala blends - Nagaram Masala brings traditional flavors to your kitchen." />
-    <meta name="author" content="Nagaram Masala" />
+const Hero: React.FC = () => {
+  const heroImages = [
+    {
+      url: "/images/spices-in-bowls-stockcake.jpg",
+      title: "Authentic Flavors",
+      subtitle: "From Chettinad"
+    },
+    {
+      url: "/images/red-chili-powder.jpg",
+      title: "Traditional Blends",
+      subtitle: "Modern Quality"
+    },
+    {
+      url: "/images/chettinadu_archjpg.jpg",
+      title: "Premium Spices",
+      subtitle: "Crafted with Heritage"
+    }
+  ];
 
-    <meta property="og:title" content="Nagaram Masala | Premium Indian Spices" />
-    <meta property="og:description" content="Discover authentic Indian spices and masala blends - Nagaram Masala brings traditional flavors to your kitchen." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1596040033229-a9821eec400d?q=80&w=2070&auto=format&fit=crop" />
+  return (
+    <section className="relative overflow-hidden w-full">
+      <Carousel className="w-full h-[70vh]" opts={{ loop: true }}>
+        <CarouselContent>
+          {heroImages.map((image, index) => (
+            <CarouselItem key={index} className="w-full h-full relative">
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{
+                  backgroundImage: `url(${image.url})`,
+                  backgroundSize: 'cover', // Ensures the image fills the space properly
+                  backgroundPosition: 'center',
+                }}
+              >
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
+              </div>
+              <div className="relative flex flex-col items-center justify-center text-center px-4 space-y-4">
+                <div className="max-w-3xl mx-auto">
+                  <h1 className="text-2xl md:text-4xl font-bold mb-2 font-playfair text-white">
+                    {image.title}
+                  </h1>
+                  <p className="text-base md:text-lg text-white/90 mb-4">
+                    {image.subtitle}
+                  </p>
+                  <div className="flex flex-wrap gap-4 justify-center">
+                    <a href="#products"
+                      className="bg-spice-red hover:bg-spice-red/90 text-white px-6 py-2 rounded-md font-medium transition-colors w-full sm:w-auto">
+                      Explore Our Spices
+                    </a>
+                    <a href="#contact"
+                      className="bg-spice-red hover:bg-spice-red/90 text-white px-6 py-2 rounded-md font-medium transition-colors w-full sm:w-auto">
+                      Order Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+    </section>
+  );
+};
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@nagarammasala" />
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1596040033229-a9821eec400d?q=80&w=2070&auto=format&fit=crop" />
-    
-    <link rel="icon" href="/favicon.ico" />
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+export default Hero;
