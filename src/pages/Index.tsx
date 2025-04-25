@@ -10,17 +10,15 @@ import ScrollToTop from '../components/ScrollToTop';
 
 const Index = () => {
   useEffect(() => {
-    // Update page title
     document.title = 'Nagaram Masala | Premium Indian Spices';
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col pt-16">
       <Header />
       <main>
         <Hero />
         <ProductsSection />
-        <AboutSection />
         <ContactSection />
       </main>
       <Footer />

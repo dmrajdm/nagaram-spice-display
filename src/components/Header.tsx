@@ -15,13 +15,16 @@ const Header: React.FC = () => {
                   <Menu size={24} />
                 </button>
               </SheetTrigger>
-              <SheetContent side="left" className="bg-white/95 backdrop-blur-md">
+              <SheetContent 
+                side="left" 
+                className="bg-black/80 backdrop-blur-md border-none"
+              >
                 <nav className="mt-8">
                   <ul className="space-y-4 text-sm font-medium">
-                    <li><a href="#" className="hover:text-spice-red transition-colors">Home</a></li>
-                    <li><a href="#products" className="hover:text-spice-red transition-colors">Products</a></li>
-                    <li><a href="#about" className="hover:text-spice-red transition-colors">Heritage</a></li>
-                    <li><a href="#contact" className="hover:text-spice-red transition-colors">Contact</a></li>
+                    <li><a href="#" className="text-white hover:text-spice-red transition-colors">Home</a></li>
+                    <li><a href="#products" className="text-white hover:text-spice-red transition-colors">Products</a></li>
+                    <li><a href="#about" className="text-white hover:text-spice-red transition-colors">Heritage</a></li>
+                    <li><a href="#contact" className="text-white hover:text-spice-red transition-colors">Contact</a></li>
                   </ul>
                 </nav>
               </SheetContent>
