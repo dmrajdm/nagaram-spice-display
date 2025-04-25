@@ -32,10 +32,13 @@ const Hero: React.FC = () => {
   return (
     <section className="relative h-[45vh] md:h-[55vh] overflow-hidden">
       <Carousel className="w-full h-full" opts={{ loop: true }}>
-        <CarouselContent className="h-full">
+        <CarouselContent className="h-full relative">
           {heroImages.map((image, index) => (
-            <CarouselItem key={index} className={`w-full h-full relative transition-opacity duration-700 ease-in-out ${index === current ? "opacity-100" : "opacity-0 absolute"}`}>
-              <div 
+            <CarouselItem
+              key={index}
+              className={`w-full h-full absolute top-0 left-0 transition-opacity duration-700 ease-in-out ${index === current ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+            >
+              <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${image.url})` }}
               >
@@ -50,7 +53,7 @@ const Hero: React.FC = () => {
                     {image.subtitle}
                   </p>
                   <div className="flex flex-wrap gap-4 justify-center">
-                    <a href="#products" 
+                    <a href="#products"
                       className="bg-spice-red hover:bg-spice-red/90 text-white px-6 py-2 rounded-md font-medium transition-colors">
                       Explore Our Spices
                     </a>
