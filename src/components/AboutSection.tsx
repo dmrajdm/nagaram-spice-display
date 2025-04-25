@@ -1,38 +1,61 @@
-
 import React from 'react';
 import { Card, CardContent } from './ui/card';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 
 const AboutSection: React.FC = () => {
+  const images = [
+    {
+      src: "/images/chettinadu_archjpg.jpg",
+      title: "Chettinad Architecture",
+      description: "Traditional mansions showcasing intricate craftsmanship"
+    },
+    {
+      src: "/images/chettinadu_cusine.jpg",
+      title: "Culinary Heritage",
+      description: "Authentic flavors preserved through generations"
+    },
+    {
+      src: "/images/spice_market.jpg",
+      title: "Spice Market",
+      description: "Carefully sourced ingredients from local markets"
+    }
+  ];
+
   return (
-    <section id="about" className="py-16 md:py-24 bg-spice-beige/30">
+    <section id="about" className="py-12 bg-spice-beige/30">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <img 
-              src="/images/chettinadu_archjpg.jpg"
-              alt="Spice market" 
-              className="rounded-lg shadow-xl w-full h-auto aspect-video object-cover"
-            />
-            <div className="grid grid-cols-3 gap-2 mt-2">
-              <img src="/images/chettinadu_archjpg.jpg" alt="Chettinad architecture" className="rounded-md h-24 object-cover" />
-              <img src="/images/chettinadu_cusine.jpg" alt="Traditional patterns" className="rounded-md h-24 object-cover" />
-              <img src="/images/spice_market.jpg" alt="Chettinad cuisine" className="rounded-md h-24 object-cover" />
-            </div>
+          <div className="space-y-4">
+            <Carousel>
+              <CarouselContent>
+                {images.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative">
+                      <img 
+                        src={image.src}
+                        alt={image.title} 
+                        className="rounded-lg shadow-xl w-full h-64 object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/40 rounded-lg flex flex-col justify-end p-4">
+                        <h3 className="text-white font-bold text-xl">{image.title}</h3>
+                        <p className="text-white/90 text-sm">{image.description}</p>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair text-spice-brown">The Nagarathar Heritage</h2>
-            <p className="text-muted-foreground mb-6">
+            <h2 className="text-3xl font-bold mb-4 font-playfair text-spice-brown">The Nagarathar Heritage</h2>
+            <p className="text-muted-foreground mb-4">
               Nagaram Masala draws inspiration from the rich Nagarathar Chettiar heritage of Tamil Nadu. 
-              For centuries, the Nagarathars were successful merchants who traveled across Southeast Asia,
-              bringing back exotic spices and culinary techniques to their homeland in Chettinad.
-            </p>
-            <p className="text-muted-foreground mb-6">
-              Like the grand mansions (Nattukottai) of Chettinad, known for their intricate craftsmanship 
-              and attention to detail, our masalas are crafted with precision and care, preserving authentic 
-              flavors that have been cherished for generations.
+              Our masalas maintain authentic proportions passed down through generations.
             </p>
             
-            <div className="grid grid-cols-2 gap-6 mt-8">
+            <div className="grid grid-cols-2 gap-4">
               <Card className="bg-white/80 border-spice-gold/30 hover:shadow-lg transition-shadow">
                 <CardContent className="pt-6">
                   <h3 className="text-xl font-bold text-spice-red mb-2 font-playfair">Heritage</h3>

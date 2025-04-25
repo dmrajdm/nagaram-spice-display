@@ -11,13 +11,17 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useToast } from '@/hooks/use-toast';
+import { usePersistedCart } from '../hooks/usePersistedCart';
+import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from './ui/drawer';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 type Category = 'all' | 'blends' | 'singles';
 
 const ProductsSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<Category>('all');
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = usePersistedCart();
   const { toast } = useToast();
+  const isMobile = useIsMobile();
   
   const filteredProducts = activeCategory === 'all'
     ? products
@@ -63,7 +67,6 @@ const ProductsSection: React.FC = () => {
     const whatsappNumber = "+917339614739";
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
     
-    // Clear cart after checkout
     setCart([]);
     toast({
       title: "Order Placed",
@@ -71,8 +74,74 @@ const ProductsSection: React.FC = () => {
     });
   };
 
+  const CartComponent = () => {
+    const content = (
+      <div className="mt-4 space-y-4">
+        {cart.map((item, index) => {
+          const product = products.find(p => p.id === item.productId);
+          if (!product) return null;
+          return (
+            <div key={index} className="flex justify-between items-center">
+              <div>
+                <p className="font-medium">{product.name}</p>
+                <p className="text-sm text-gray-600">{item.weight} x {item.quantity}</p>
+              </div>
+              <p className="font-medium">₹{calculateItemPrice(product.price, item.weight) * item.quantity}</p>
+            </div>
+          );
+        })}
+        {cart.length > 0 ? (
+          <div className="pt-4 border-t">
+            <p className="font-bold text-lg mb-4">Total: ₹{getTotalAmount()}</p>
+            <Button onClick={handleCheckout} className="w-full bg-gray-800 hover:bg-gray-700 text-xl py-6">
+              Checkout via WhatsApp
+            </Button>
+          </div>
+        ) : (
+          <p className="text-center text-gray-500">Your cart is empty</p>
+        )}
+      </div>
+    );
+
+    return isMobile ? (
+      <Drawer>
+        <DrawerTrigger asChild>
+          <Button variant="outline" className="fixed bottom-4 right-4 z-50 h-16 px-6 shadow-lg">
+            <ShoppingCart className="h-6 w-6 mr-2" />
+            <span className="text-lg">Cart ({cart.length})</span>
+          </Button>
+        </DrawerTrigger>
+        <DrawerContent>
+          <DrawerHeader>
+            <DrawerTitle>Shopping Cart</DrawerTitle>
+          </DrawerHeader>
+          {content}
+        </DrawerContent>
+      </Drawer>
+    ) : (
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant="outline" className="relative">
+            <ShoppingCart className="h-4 w-4" />
+            {cart.length > 0 && (
+              <span className="absolute -top-1 -right-1 bg-gray-800 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
+                {cart.length}
+              </span>
+            )}
+          </Button>
+        </SheetTrigger>
+        <SheetContent>
+          <SheetHeader>
+            <SheetTitle>Shopping Cart</SheetTitle>
+          </SheetHeader>
+          {content}
+        </SheetContent>
+      </Sheet>
+    );
+  };
+
   return (
-    <section id="products" className="py-16 bg-white">
+    <section id="products" className="py-8 md:py-12 bg-white">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-4">
@@ -103,49 +172,7 @@ const ProductsSection: React.FC = () => {
               </button>
             ))}
           </div>
-
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="outline" className="relative">
-                <ShoppingCart className="h-4 w-4" />
-                {cart.length > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-gray-800 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
-                    {cart.length}
-                  </span>
-                )}
-              </Button>
-            </SheetTrigger>
-            <SheetContent>
-              <SheetHeader>
-                <SheetTitle>Shopping Cart</SheetTitle>
-              </SheetHeader>
-              <div className="mt-4 space-y-4">
-                {cart.map((item, index) => {
-                  const product = products.find(p => p.id === item.productId);
-                  if (!product) return null;
-                  return (
-                    <div key={index} className="flex justify-between items-center">
-                      <div>
-                        <p className="font-medium">{product.name}</p>
-                        <p className="text-sm text-gray-600">{item.weight} x {item.quantity}</p>
-                      </div>
-                      <p className="font-medium">₹{calculateItemPrice(product.price, item.weight) * item.quantity}</p>
-                    </div>
-                  );
-                })}
-                {cart.length > 0 ? (
-                  <div className="pt-4 border-t">
-                    <p className="font-bold text-lg mb-4">Total: ₹{getTotalAmount()}</p>
-                    <Button onClick={handleCheckout} className="w-full bg-gray-800 hover:bg-gray-700">
-                      Checkout via WhatsApp
-                    </Button>
-                  </div>
-                ) : (
-                  <p className="text-center text-gray-500">Your cart is empty</p>
-                )}
-              </div>
-            </SheetContent>
-          </Sheet>
+          <CartComponent />
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
