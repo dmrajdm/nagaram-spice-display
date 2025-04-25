@@ -4,18 +4,9 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 
 const heroImages = [
-  {
-    src: "/images/hero-image-1.webp",
-    alt: "First slide",
-  },
-  {
-    src: "/images/hero-image-2.webp",
-    alt: "Second slide",
-  },
-  {
-    src: "/images/hero-image-3.webp",
-    alt: "Third slide",
-  },
+  { src: "/images/hero-image-1.webp", alt: "First slide" },
+  { src: "/images/hero-image-2.webp", alt: "Second slide" },
+  { src: "/images/hero-image-3.webp", alt: "Third slide" },
 ]
 
 export function Carousel() {
@@ -29,12 +20,12 @@ export function Carousel() {
   }, [])
 
   return (
-    <section className="relative min-h-[45vh] md:min-h-[55vh] overflow-hidden">
+    <section className="relative h-[45vh] md:h-[55vh] overflow-hidden">
       {heroImages.map((image, index) => (
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === activeIndex ? "opacity-100" : "opacity-0"
+            index === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
           <Image
