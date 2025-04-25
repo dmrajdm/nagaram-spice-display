@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative h-[60vh] md:h-[75vh] overflow-hidden">
+    <section className="relative h-[80vh] md:h-[100vh] overflow-hidden">
       <Carousel className="w-full h-full" opts={{ loop: true }}>
         <CarouselContent>
           {heroImages.map((image, index) => (
@@ -30,13 +30,13 @@ const Hero: React.FC = () => {
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
                   backgroundImage: `url(${image.url})`,
-                  backgroundSize: 'cover', // Ensure the image covers the area without distortion
-                  backgroundPosition: 'center', // Keeps the focus in the center of the image
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               >
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
               </div>
-              <div className="relative h-full flex flex-col items-center justify-center text-center px-4 space-y-4">
+              <div className="relative flex flex-col items-center justify-center w-full h-full text-center px-4 space-y-4">
                 <div className="max-w-3xl mx-auto">
                   <h1 className="text-2xl md:text-4xl font-bold mb-2 font-playfair text-white">
                     {image.title}
