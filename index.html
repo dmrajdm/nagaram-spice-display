@@ -21,45 +21,39 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden">
-      <div className="h-[260px] md:h-[320px]">
-        <Carousel className="w-full h-full" opts={{ loop: true }}>
-          <CarouselContent className="h-full">
-            {heroImages.map((image, index) => (
-              <CarouselItem key={index} className="w-full h-full relative">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${image.url})` }}
-                >
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+    <section className="relative w-full">
+      <Carousel className="w-full" opts={{ loop: true }}>
+        <CarouselContent>
+          {heroImages.map((image, index) => (
+            <CarouselItem key={index} className="relative h-[260px] md:h-[320px]">
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${image.url})` }}
+              >
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+              </div>
+              <div className="relative z-10 h-full flex flex-col justify-center items-center text-white text-center px-4">
+                <h1 className="text-xl md:text-3xl font-bold font-playfair">{image.title}</h1>
+                <p className="text-sm md:text-lg mt-1 mb-3">{image.subtitle}</p>
+                <div className="flex gap-4 flex-wrap justify-center">
+                  <a
+                    href="#products"
+                    className="bg-spice-red hover:bg-spice-red/90 px-4 py-2 rounded text-white text-sm"
+                  >
+                    Explore Our Spices
+                  </a>
+                  <a
+                    href="#contact"
+                    className="bg-spice-red hover:bg-spice-red/90 px-4 py-2 rounded text-white text-sm"
+                  >
+                    Order Now
+                  </a>
                 </div>
-                <div className="relative h-full flex flex-col justify-center items-center text-center px-4 z-10">
-                  <h1 className="text-xl md:text-3xl font-bold text-white mb-1 font-playfair">
-                    {image.title}
-                  </h1>
-                  <p className="text-sm md:text-lg text-white/90 mb-3">
-                    {image.subtitle}
-                  </p>
-                  <div className="flex gap-3 flex-wrap justify-center">
-                    <a
-                      href="#products"
-                      className="bg-spice-red hover:bg-spice-red/90 text-white px-5 py-2 rounded font-medium text-sm md:text-base"
-                    >
-                      Explore Our Spices
-                    </a>
-                    <a
-                      href="#contact"
-                      className="bg-spice-red hover:bg-spice-red/90 text-white px-5 py-2 rounded font-medium text-sm md:text-base"
-                    >
-                      Order Now
-                    </a>
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-      </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </section>
   );
 };
