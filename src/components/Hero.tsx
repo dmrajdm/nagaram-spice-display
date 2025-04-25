@@ -21,16 +21,16 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden">
-      <Carousel className="w-full h-[100vh]" opts={{ loop: true }}>
+    <section className="relative overflow-hidden w-full">
+      <Carousel className="w-full h-screen" opts={{ loop: true }}>
         <CarouselContent>
           {heroImages.map((image, index) => (
-            <CarouselItem key={index} className="w-full h-full relative">
+            <CarouselItem key={index} className="w-full h-screen relative">
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
                   backgroundImage: `url(${image.url})`,
-                  backgroundSize: 'cover',
+                  backgroundSize: 'cover', // Forces the image to cover the space
                   backgroundPosition: 'center',
                 }}
               >
