@@ -4,17 +4,17 @@ import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 const Hero: React.FC = () => {
   const heroImages = [
     {
-      url: "/images/spices-in-bowls-stockcake.jpg",
+      url: "/images/spices-in-bowls-stockcake.jpg", // Check this path
       title: "Authentic Flavors",
       subtitle: "From Chettinad"
     },
     {
-      url: "/images/red-chili-powder.jpg",
+      url: "/images/red-chili-powder.jpg", // Check this path
       title: "Traditional Blends",
       subtitle: "Modern Quality"
     },
     {
-      url: "/images/chettinadu_archjpg.jpg",
+      url: "/images/chettinadu_archjpg.jpg", // Check this path
       title: "Premium Spices",
       subtitle: "Crafted with Heritage"
     }
@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
     if (!isHovered) {
       interval = setInterval(() => {
         setCurrent((prev) => (prev + 1) % heroImages.length);
-      },4000);
+      }, 2000);
     }
 
     const progressInterval = setInterval(() => {
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
             >
               <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${image.url})` }}
+                style={{ backgroundImage: `url(${import.meta.env.BASE_URL}${image.url})` }} // Vite handling for assets
               >
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
               </div>
