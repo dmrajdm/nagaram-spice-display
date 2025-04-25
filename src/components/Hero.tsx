@@ -4,17 +4,17 @@ import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 const Hero: React.FC = () => {
   const heroImages = [
     {
-      url: "/images/spices-in-bowls-stockcake.jpg", // Check this path
+      url: "/images/spices-in-bowls-stockcake.jpg", // Vite will correctly handle this from the public folder
       title: "Authentic Flavors",
       subtitle: "From Chettinad"
     },
     {
-      url: "/images/red-chili-powder.jpg", // Check this path
+      url: "/images/red-chili-powder.jpg",
       title: "Traditional Blends",
       subtitle: "Modern Quality"
     },
     {
-      url: "/images/chettinadu_archjpg.jpg", // Check this path
+      url: "/images/chettinadu_archjpg.jpg",
       title: "Premium Spices",
       subtitle: "Crafted with Heritage"
     }
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
             >
               <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${import.meta.env.BASE_URL}${image.url})` }} // Vite handling for assets
+                style={{ backgroundImage: `url(${image.url})` }} // Vite will correctly handle static public assets
               >
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
               </div>
@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
                       Explore Our Spices
                     </a>
                     <a href="#contact"
-                      className="bg-spice-red hover:bg-spice-red/90 text-white px-6 py-2 rounded-md font-medium transition-colors">
+                      className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-6 py-2 rounded-md font-medium transition-colors">
                       Order Now
                     </a>
                   </div>
@@ -88,11 +88,11 @@ const Hero: React.FC = () => {
         </CarouselContent>
       </Carousel>
 
-      {/* Progress Bar */}
-      <div className="absolute bottom-0 left-0 w-full bg-black/50 h-1">
+      {/* Modern Progress Bar */}
+      <div className="absolute bottom-0 left-0 w-full bg-black/40 h-2">
         <div
-          className="h-full bg-spice-red"
-          style={{ width: `${progress}%`, transition: "width 0.2s" }}
+          className="h-full bg-spice-red transition-all duration-200 ease-out"
+          style={{ width: `${progress}%` }}
         />
       </div>
     </section>
