@@ -1,96 +1,58 @@
+
 import React from 'react';
-import { Card, CardContent } from './ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 
 const AboutSection: React.FC = () => {
-  const images = [
+  const features = [
     {
-      src: "/images/chettinadu_archjpg.jpg",
-      title: "Chettinad Architecture",
-      description: "Traditional mansions showcasing intricate craftsmanship"
+      image: "/images/chettinadu_archjpg.jpg",
+      title: "Heritage",
+      description: "Our recipes follow the Chettinad tradition of balancing bold spices with subtle aromatic notes."
     },
     {
-      src: "/images/chettinadu_cusine.jpg",
-      title: "Culinary Heritage",
-      description: "Authentic flavors preserved through generations"
+      image: "/images/chettinadu_cusine.jpg",
+      title: "Craftsmanship",
+      description: "Like Athangudi tiles, our spices are handcrafted with traditional techniques."
     },
     {
-      src: "/images/spice_market.jpg",
-      title: "Spice Market",
-      description: "Carefully sourced ingredients from local markets"
+      image: "/images/spice_market.jpg",
+      title: "Authenticity",
+      description: "Our masalas maintain the authentic proportions of the Nagarathar culinary tradition."
+    },
+    {
+      image: "/images/spices-in-bowls-stockcake.jpg",
+      title: "Community",
+      description: "We support traditional spice farmers and artisans from the Chettinad region."
     }
   ];
 
   return (
     <section id="about" className="py-12 bg-spice-beige/30">
       <div className="container max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-4">
-            <Carousel>
-              <CarouselContent>
-                {images.map((image, index) => (
-                  <CarouselItem key={index}>
-                    <div className="relative">
-                      <img 
-                        src={image.src}
-                        alt={image.title} 
-                        className="rounded-lg shadow-xl w-full h-64 object-cover"
-                      />
-                      <div className="absolute inset-0 bg-black/40 rounded-lg flex flex-col justify-end p-4">
-                        <h3 className="text-white font-bold text-xl">{image.title}</h3>
-                        <p className="text-white/90 text-sm">{image.description}</p>
-                      </div>
+        <h2 className="text-3xl font-bold mb-8 font-playfair text-spice-brown text-center">The Nagarathar Heritage</h2>
+        <Carousel opts={{ loop: true }}>
+          <CarouselContent>
+            {features.map((feature, index) => (
+              <CarouselItem key={index}>
+                <div className="relative h-[400px] rounded-lg overflow-hidden">
+                  <img 
+                    src={feature.image}
+                    alt={feature.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 className="text-2xl font-bold mb-2 font-playfair">{feature.title}</h3>
+                      <p className="text-white/90">{feature.description}</p>
                     </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold mb-4 font-playfair text-spice-brown">The Nagarathar Heritage</h2>
-            <p className="text-muted-foreground mb-4">
-              Nagaram Masala draws inspiration from the rich Nagarathar Chettiar heritage of Tamil Nadu. 
-              Our masalas maintain authentic proportions passed down through generations.
-            </p>
-            
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="bg-white/80 border-spice-gold/30 hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-bold text-spice-red mb-2 font-playfair">Heritage</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Our recipes follow the Chettinad tradition of balancing bold spices with subtle aromatic notes.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="bg-white/80 border-spice-gold/30 hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-bold text-spice-red mb-2 font-playfair">Craftsmanship</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Like Athangudi tiles, our spices are handcrafted with traditional techniques.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="bg-white/80 border-spice-gold/30 hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-bold text-spice-red mb-2 font-playfair">Authenticity</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Our masalas maintain the authentic proportions of the Nagarathar culinary tradition.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="bg-white/80 border-spice-gold/30 hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-bold text-spice-red mb-2 font-playfair">Community</h3>
-                  <p className="text-sm text-muted-foreground">
-                    We support traditional spice farmers and artisans from the Chettinad region.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </section>
   );

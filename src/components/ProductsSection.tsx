@@ -92,8 +92,8 @@ const ProductsSection: React.FC = () => {
         })}
         {cart.length > 0 ? (
           <div className="pt-4 border-t">
-            <p className="font-bold text-lg mb-4">Total: ₹{getTotalAmount()}</p>
-            <Button onClick={handleCheckout} className="w-full bg-gray-800 hover:bg-gray-700 text-xl py-6">
+            <p className="font-bold text-xl mb-4">Total: ₹{getTotalAmount()}</p>
+            <Button onClick={handleCheckout} className="w-full bg-spice-red hover:bg-spice-red/90 text-white text-xl py-6">
               Checkout via WhatsApp
             </Button>
           </div>
@@ -106,7 +106,7 @@ const ProductsSection: React.FC = () => {
     return isMobile ? (
       <Drawer>
         <DrawerTrigger asChild>
-          <Button variant="outline" className="fixed bottom-4 right-4 z-50 h-16 px-6 shadow-lg">
+          <Button variant="outline" className="fixed bottom-4 right-4 z-40 h-16 px-6 shadow-lg bg-spice-red text-white hover:bg-spice-red/90">
             <ShoppingCart className="h-6 w-6 mr-2" />
             <span className="text-lg">Cart ({cart.length})</span>
           </Button>
@@ -121,13 +121,9 @@ const ProductsSection: React.FC = () => {
     ) : (
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="outline" className="relative">
-            <ShoppingCart className="h-4 w-4" />
-            {cart.length > 0 && (
-              <span className="absolute -top-1 -right-1 bg-gray-800 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
-                {cart.length}
-              </span>
-            )}
+          <Button variant="outline" className="relative bg-spice-red text-white hover:bg-spice-red/90 px-6 py-3">
+            <ShoppingCart className="h-6 w-6 mr-2" />
+            <span className="text-lg">Cart ({cart.length})</span>
           </Button>
         </SheetTrigger>
         <SheetContent>

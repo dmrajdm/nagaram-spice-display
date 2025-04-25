@@ -1,13 +1,11 @@
 
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import React from 'react';
+import { Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 
 const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <header className="py-3 bg-white shadow-sm sticky top-0 z-50">
+    <header className="py-3 fixed w-full top-0 z-50 backdrop-blur-sm bg-white/80">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
@@ -17,7 +15,7 @@ const Header: React.FC = () => {
                   <Menu size={24} />
                 </button>
               </SheetTrigger>
-              <SheetContent side="left">
+              <SheetContent side="left" className="bg-white/95 backdrop-blur-md">
                 <nav className="mt-8">
                   <ul className="space-y-4 text-sm font-medium">
                     <li><a href="#" className="hover:text-spice-red transition-colors">Home</a></li>
