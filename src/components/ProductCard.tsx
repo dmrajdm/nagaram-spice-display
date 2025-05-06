@@ -12,7 +12,7 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
-  const [selectedWeight, setSelectedWeight] = useState<'100g' | '500g' | '1kg'>('100g');
+  const [selectedWeight, setSelectedWeight] = useState< '50g' | '100g' | '500g' | '1kg'>('50g');
   const [quantity, setQuantity] = useState(1);
   const { toast } = useToast();
 
