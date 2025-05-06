@@ -53,11 +53,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
         <p className="text-gray-600 text-sm mb-4">{product.description}</p>
         
         <div className="grid grid-cols-2 gap-2 mb-4">
-          <Select value={selectedWeight} onValueChange={(value: '100g' | '500g' | '1kg') => setSelectedWeight(value)}>
+          <Select value={selectedWeight} onValueChange={(value: '50g' | '100g' | '500g' | '1kg') => setSelectedWeight(value)}>
             <SelectTrigger>
               <SelectValue placeholder="Weight" />
             </SelectTrigger>
             <SelectContent>
+              <SelectItem value="50g">50g</SelectItem>
               <SelectItem value="100g">100g</SelectItem>
               <SelectItem value="500g">500g</SelectItem>
               <SelectItem value="1kg">1kg</SelectItem>
