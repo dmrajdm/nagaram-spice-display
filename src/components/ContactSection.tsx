@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -82,7 +81,12 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-medium">WhatsApp</h4>
-                  <a href={`https://wa.me/${whatsappNumber}`} className="text-spice-red hover:underline">
+                  <a
+                    href={`https://wa.me/${whatsappNumber}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-spice-red hover:underline"
+                  >
                     {whatsappNumber.replace(/(\d{2})(\d{5})(\d{5})/, '+$1 $2 $3')}
                   </a>
                 </div>
