@@ -47,7 +47,7 @@ export const products: Product[] = [
   },
   {
     id: "kulambu-masala",
-    name: "Chaat Masala",
+    name: "kulambu Masala",
     description: "Tangy, zesty blend perfect for sprinkling on fruits, salads, and chaats.",
     price: 849,
     imageUrl: "/images/kulambu-masala.jpg",
@@ -78,17 +78,19 @@ export const products: Product[] = [
 export interface CartItem {
   productId: string;
   quantity: number;
-  weight: '100g' | '500g' | '1kg';
+  weight: '50g' | '100g' | '500g' | '1kg';
 }
 
-export const calculateItemPrice = (basePrice: number, weight: '100g' | '500g' | '1kg'): number => {
+export const calculateItemPrice = (basePrice: number, weight: '50g' | '100g' | '500g' | '1kg'): number => {
   switch (weight) {
-    case '100g':
+    case '50g':
       return basePrice;
+    case '100g':
+      return basePrice * 1.9 ;
     case '500g':
       return basePrice * 4.5;
     case '1kg':
-      return basePrice * 8;
+      return basePrice * 8.5;
     default:
       return basePrice;
   }
