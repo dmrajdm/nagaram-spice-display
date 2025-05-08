@@ -9,7 +9,7 @@ export interface Product {
 }
 
 export const products: Product[] = [
-  {
+ /** {
     id: "garam-masala",
     name: "Garam Masala",
     description: "A warm blend of cumin, coriander, cardamom, and other spices perfect for curries and rice dishes.",
@@ -17,7 +17,7 @@ export const products: Product[] = [
     imageUrl: "/images/garam-masala.jpg",
     category: "blends",
     featured: true
-  },
+  },*/
  /** {
     id: "turmeric-powder",
     name: "Turmeric Powder",
@@ -36,7 +36,7 @@ export const products: Product[] = [
     category: "singles",
     featured: false
   },*/
-  {
+/**  {
     id: "cumin-powder",
     name: "Cumin Powder",
     description: "Earthy, nutty spice that adds warm flavor to many dishes.",
@@ -44,7 +44,7 @@ export const products: Product[] = [
     imageUrl: "/images/cumin-powder.jpg",
     category: "singles",
     featured: false
-  },
+  },*/
   {
     id: "kulambu-masala",
     name: "kulambu Masala",
@@ -54,7 +54,7 @@ export const products: Product[] = [
     category: "blends",
     featured: true
   },
-  {
+ /** {
     id: "biryani-masala",
     name: "Biryani Masala",
     description: "Aromatic blend crafted specifically for perfect biryanis and rice dishes.",
@@ -62,12 +62,40 @@ export const products: Product[] = [
     imageUrl: "/images/biryani-masala.jpg",
     category: "blends",
     featured: false
-  },
+  },*/
   {
     id: "red-chili-powder",
     name: "Red Chili Powder",
     description: "Vibrant, hot chili powder for adding heat to any dish.",
     price: 30,
+    imageUrl: "/images/red-chili-powder.jpg",
+    category: "singles",
+    featured: true
+  },
+  {
+    id: "rasam-powder",
+    name: "Rasam Powder",
+    description: "Vibrant, hot chili powder for adding heat to any dish.",
+    price: 50,
+    imageUrl: "/images/red-chili-powder.jpg",
+    category: "singles",
+    featured: true
+  },
+  {
+    id: "idly-powder",
+    name: "Idly Powder",
+    description: "Vibrant, hot chili powder for adding heat to any dish.",
+    price: 35,
+    imageUrl: "/images/red-chili-powder.jpg",
+    category: "singles",
+    featured: true
+  },
+  
+];{
+    id: "curry-leaf-powder",
+    name: "Curry leaf Powder",
+    description: "Vibrant, hot chili powder for adding heat to any dish.",
+    price: 40,
     imageUrl: "/images/red-chili-powder.jpg",
     category: "singles",
     featured: true
@@ -86,11 +114,11 @@ export const calculateItemPrice = (basePrice: number, weight: '50g' | '100g' | '
     case '50g':
       return basePrice;
     case '100g':
-      return basePrice * 1.9 ;
+      return basePrice * 2 ;
     case '500g':
-      return basePrice * 4.5;
+      return basePrice * 9.5;
     case '1kg':
-      return basePrice * 8.5;
+      return basePrice * 18;
     default:
       return basePrice;
   }
