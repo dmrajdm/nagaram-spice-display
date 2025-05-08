@@ -90,8 +90,7 @@ export const products: Product[] = [
     category: "singles",
     featured: true
   },
-  
-];{
+  {
     id: "curry-leaf-powder",
     name: "Curry leaf Powder",
     description: "Vibrant, hot chili powder for adding heat to any dish.",
