@@ -18,7 +18,7 @@ export const products: Product[] = [
     category: "blends",
     featured: true
   },
-  {
+ /** {
     id: "turmeric-powder",
     name: "Turmeric Powder",
     description: "Vibrant yellow spice with earthy flavor and anti-inflammatory properties.",
@@ -26,8 +26,8 @@ export const products: Product[] = [
     imageUrl: "/images/turmeric-powder.jpg",
     category: "singles",
     featured: true
-  },
-  {
+  },*/
+ /** {
     id: "coriander-powder",
     name: "Coriander Powder",
     description: "Mild, sweet and aromatic ground coriander seeds essential for Indian cooking.",
@@ -35,7 +35,7 @@ export const products: Product[] = [
     imageUrl: "/images/coriander-powder.jpg",
     category: "singles",
     featured: false
-  },
+  },*/
   {
     id: "cumin-powder",
     name: "Cumin Powder",
@@ -49,7 +49,7 @@ export const products: Product[] = [
     id: "kulambu-masala",
     name: "kulambu Masala",
     description: "Tangy, zesty blend perfect for sprinkling on fruits, salads, and chaats.",
-    price: 849,
+    price: 40,
     imageUrl: "/images/kulambu-masala.jpg",
     category: "blends",
     featured: true
@@ -67,7 +67,7 @@ export const products: Product[] = [
     id: "red-chili-powder",
     name: "Red Chili Powder",
     description: "Vibrant, hot chili powder for adding heat to any dish.",
-    price: 599,
+    price: 30,
     imageUrl: "/images/red-chili-powder.jpg",
     category: "singles",
     featured: true
