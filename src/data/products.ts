@@ -32,7 +32,7 @@ export const products: Product[] = [
     name: "Rasam Powder",
     description: "Classic blend for tangy, spicy and aromatic rasam every time.",
     price: 50,
-    imageUrl: "/images/rasam-powder.png",
+    imageUrl: "/images/rasam-powder.jpg",
     category: "singles",
     featured: true
   },
