@@ -9,7 +9,7 @@ import ScrollToTop from '../components/ScrollToTop';
 
 const Index = () => {
   useEffect(() => {
-    document.title = 'Nagaram Masala | Premium Indian Spices';
+    document.title = 'Nagaram Masala – Authentic Indian Chettinadu Spices';
   }, []);
 
   return (
