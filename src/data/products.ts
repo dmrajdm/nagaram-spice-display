@@ -13,7 +13,7 @@ export const products: Product[] = [
     id: "kulambu-masala",
     name: "kulambu Masala",
     description: "Spicy, flavorful mix made for perfect South Indian kulambu dishes.",
-    price: 40,
+    price: 50,
     imageUrl: "/images/kulambu-masala.jpg",
     category: "blends",
     featured: true
@@ -22,7 +22,7 @@ export const products: Product[] = [
     id: "sidedish-powder",
     name: "Sidedish Powder",
     description: "Bold and fiery spice to add instant taste to any recipe.",
-    price: 30,
+    price: 40,
     imageUrl: "/images/sidedish-powder.jpg",
     category: "singles",
     featured: true
@@ -31,7 +31,7 @@ export const products: Product[] = [
     id: "rasam-powder",
     name: "Rasam Powder",
     description: "Classic blend for tangy, spicy and aromatic rasam every time.",
-    price: 50,
+    price: 45,
     imageUrl: "/images/rasam-powder.jpg",
     category: "singles",
     featured: true
@@ -40,7 +40,7 @@ export const products: Product[] = [
     id: "idly-podi",
     name: "Idly Podi",
     description: "Tasty and spicy sidekick for idly and dosa lovers.",
-    price: 35,
+    price: 45,
     imageUrl: "/images/idly-podi.jpg",
     category: "singles",
     featured: true
@@ -49,11 +49,20 @@ export const products: Product[] = [
     id: "curry-leaf-powder",
     name: "Curry leaf Powder",
     description: "Aromatic curry leaf blend that adds punch to rice and snacks.",
-    price: 40,
-    imageUrl: "/images/red-chili-powder.jpg",
+    price: 50,
+    imageUrl: "/images/curryleaf-powder.jpg",
     category: "singles",
     featured: true
-  }
+  },
+  {
+    id: "combo-pack",
+    name: "Combo Pack(Each 50)",
+    description: "All South Indian Flavour in One Combo",
+    price: 230,
+    imageUrl: "/images/combo-pack.jpg",
+    category: "singles",
+    featured: true
+}
 ];
 
 // Cart types
@@ -68,11 +77,11 @@ export const calculateItemPrice = (basePrice: number, weight: '50g' | '100g' | '
     case '50g':
       return basePrice;
     case '100g':
-      return basePrice * 2 ;
+      return (basePrice * 2)-5 ;
     case '500g':
       return basePrice * 9.5;
     case '1kg':
-      return basePrice * 18;
+      return basePrice * 19;
     default:
       return basePrice;
   }
