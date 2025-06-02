@@ -37,11 +37,11 @@ export const products: Product[] = [
     featured: true
   },
   {
-    id: "idly-powder",
-    name: "Idly Powder",
+    id: "idly-podi",
+    name: "Idly Podi",
     description: "Tasty and spicy sidekick for idly and dosa lovers.",
     price: 35,
-    imageUrl: "/images/red-chili-powder.jpg",
+    imageUrl: "/images/idly-podi.jpg",
     category: "singles",
     featured: true
   },
