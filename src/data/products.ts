@@ -19,11 +19,11 @@ export const products: Product[] = [
     featured: true
   },
   {
-    id: "red-chili-powder",
-    name: "Red Chili Powder",
-    description: "Bold and fiery spice to add instant heat to any recipe.",
+    id: "sidedish-powder",
+    name: "Sidedish Powder",
+    description: "Bold and fiery spice to add instant taste to any recipe.",
     price: 30,
-    imageUrl: "/images/red-chili-powder.jpg",
+    imageUrl: "/images/sidedish-powder.jpg",
     category: "singles",
     featured: true
   },
