@@ -56,7 +56,7 @@ export const products: Product[] = [
   },
   {
     id: "combo-pack",
-    name: "Combo Pack(Each 50)",
+    name: "Combo Pack(Each 50gm)",
     description: "All South Indian Flavour in One Combo",
     price: 230,
     imageUrl: "/images/combo-pack.jpg",
