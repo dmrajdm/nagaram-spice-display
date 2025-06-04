@@ -24,7 +24,7 @@ export const products: Product[] = [
     description: "Bold and fiery spice to add instant taste to any recipe.",
     price: 40,
     imageUrl: "/images/sidedish-powder.jpg",
-    category: "singles",
+    category: "blends",
     featured: true
   },
   {
@@ -33,7 +33,7 @@ export const products: Product[] = [
     description: "Classic blend for tangy, spicy and aromatic rasam every time.",
     price: 45,
     imageUrl: "/images/rasam-powder.jpg",
-    category: "singles",
+    category: "blends",
     featured: true
   },
   {
@@ -42,7 +42,7 @@ export const products: Product[] = [
     description: "Tasty and spicy sidekick for idly and dosa lovers.",
     price: 45,
     imageUrl: "/images/idly-podi.jpg",
-    category: "singles",
+    category: "blends",
     featured: true
   },
   {
@@ -51,7 +51,7 @@ export const products: Product[] = [
     description: "Aromatic curry leaf blend that adds punch to rice and snacks.",
     price: 50,
     imageUrl: "/images/curryleaf-powder.jpg",
-    category: "singles",
+    category: "blends",
     featured: true
   },
   {
@@ -60,7 +60,7 @@ export const products: Product[] = [
     description: "All South Indian Flavour in One Combo",
     price: 230,
     imageUrl: "/images/combo-pack.jpg",
-    category: "singles",
+    category: "blends",
     featured: true
 }
 ];
